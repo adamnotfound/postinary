@@ -6,10 +6,10 @@ Postinary is an imaginary social network blog where you can share your thoughts 
 ---
 
 ### Prerequisites
-:ballot_box_with_check: **NPM** [ currently using v6.14.16 ]
-:ballot_box_with_check: **Node** [ currently using v14.19 ]
-:ballot_box_with_check: **Docker**
-:ballot_box_with_check: **Docker-compose**
+:ballot_box_with_check: **NPM** [ currently using v6.14.16 ] <br/>
+:ballot_box_with_check: **Node** [ currently using v14.19 ] <br/>
+:ballot_box_with_check: **Docker** <br/>
+:ballot_box_with_check: **Docker-compose** <br/>
 
 ### Installation
 1. Install Dependencies

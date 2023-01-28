@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Singlepost.css';
+import moment from 'moment';
+
 const SinglePost = (props) => {
   const post = props.post;
   return (
@@ -25,6 +27,7 @@ const SinglePost = (props) => {
           {post.content.substr(0, 150)}
           {post.content.length > 150 ? '...' : ''}
         </p>
+        <p className="time">{moment(post?.createdAt).format('llll')}</p>
       </div>
     </Link>
   );

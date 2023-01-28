@@ -51,10 +51,13 @@ const Details = () => {
                   : 'https://www.ninjaseo.com.au/wp-content/uploads/2016/07/placeholder4.png'
               }
             />
-            <p>{post?.content}</p>
-            <span className="time">
-              {moment(post?.createdAt).format('llll')}
-            </span>
+            <p style={{marginBottom:"4vh"}}>{post?.content}</p>
+            <p className="time">
+              Last update: {moment(post?.updatedAt).format('llll')}
+            </p>
+            <p className="time">
+              Created at: {moment(post?.createdAt).format('llll')}
+            </p>
             <span
               disabled={delLoad}
               className="material-icons delete"
