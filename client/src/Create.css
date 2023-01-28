@@ -1,0 +1,175 @@
+form {
+  height: auto;
+  max-width: 30rem;
+  min-width: 250px;
+  margin: -15rem auto;
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  box-shadow: 0 0 0.4rem #8800ff23;
+  border-radius: 0.5rem;
+}
+form h2 {
+  text-align: center;
+  color: #8800ff;
+  margin-bottom: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+label {
+  display: block;
+  color: rgba(68, 68, 68, 0.604);
+  margin: 1rem 0;
+}
+input,
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(130, 128, 128);
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+button {
+  display: block;
+  background: rgb(248, 24, 65);
+  border: none;
+  color: white;
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 1rem;
+}
+.btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.image-container {
+  height: 100px;
+  width: 150px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.uploaded-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.overlay{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+  
+}
+.overlay:hover .delete-img-container{
+  display: flex;
+}
+.delete-img-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /* display: flex; */
+  display: none;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.473);
+  color: white;
+}
+.delete-img-container span {
+  background: red;
+  cursor: pointer;
+}
+
+.loading-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.loading-upload-container > span {
+  font-size: 12px;
+}
+.image-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.plus-icon {
+  font-size: 25px;
+}
+.upload-text {
+  font-size: 14px;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: -5px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #8800ff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #8800ff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

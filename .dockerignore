@@ -1,0 +1,8 @@
+# Server Side
+/node_modules
+.git
+/dist
+# Client Side
+/client/.git
+/client/node_modules
+/client/build
