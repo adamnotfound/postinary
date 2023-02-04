@@ -1,0 +1,58 @@
+// Set text color based on bg
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// Uses flex and center elements
+@mixin flex-center($direction: row, $justify: center) {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+// Set media query for different screens based on device
+@mixin responsive($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+//Sets keyframes for different browser support
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//Sets animation
+@mixin animation($name, $duration: 2s, $timing: ease-in-out, $filling: none) {
+  -webkit-animation: $name $duration infinite $timing $filling;
+  animation: $name $duration infinite $timing;
+}

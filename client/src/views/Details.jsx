@@ -1,8 +1,7 @@
-import './Details.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { ALL_POSTS, DELETE_POST, SINGLE_POST } from './queries';
-import LoadingTwo from './LoadingTwo';
+import { ALL_POSTS, DELETE_POST, SINGLE_POST } from '../queries';
+import { LoadingTwo } from '../components/Loading';
 import moment from 'moment';
 
 const Details = () => {
@@ -33,17 +32,16 @@ const Details = () => {
     }
   };
   return (
-    <section className="details">
-      <div className="details-section">
-        {post && !delLoad && <h1 className="title-detail">{post.title}</h1>}
+    <section className="details-section">
+      <div className="post-details">
+        {post && !delLoad && <h1 className="mb-2">{post.title}</h1>}
         {(loading || delLoad) && <LoadingTwo />}
         {error && <p>{error}</p>}
       </div>
-      <div className="blog-container">
+      <div className="post-container">
         {post && !delLoad && (
-          <div className="blog-details">
+          <div className="content">
             <img
-              className="detail-img"
               alt="Post Img"
               src={
                 post.picture
@@ -51,7 +49,7 @@ const Details = () => {
                   : 'https://www.ninjaseo.com.au/wp-content/uploads/2016/07/placeholder4.png'
               }
             />
-            <p style={{marginBottom:"4vh"}}>{post?.content}</p>
+            <p className="mb-3">{post?.content}</p>
             <p className="time">
               Last update: {moment(post?.updatedAt).format('llll')}
             </p>

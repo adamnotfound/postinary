@@ -1,0 +1,68 @@
+@use '../partials/' as *;
+
+.details-section {
+  padding-bottom: 1rem;
+  .post-details {
+    @include set-background($theme-color);
+    min-height: $details-section-headerheight;
+    padding: 3rem 3rem;
+    // Post Title
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      padding-bottom: 1rem;
+    }
+  }
+  .post-container {
+    padding: 1rem 1rem;
+    // Post Content
+    .content {
+      max-width: $details-section-modalwidth;
+      padding: 1rem;
+      margin: auto;
+      @include set-background($details-section-bgcolor);
+      margin-top: -5rem;
+      border-radius: 0.5rem;
+      line-height: 1.7;
+      box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.39);
+      position: relative;
+      // Post Image
+      img {
+        height: 350px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 15px;
+      }
+      // Post Times
+      .time {
+        font-size: 12px;
+        color: gray;
+        font-weight: bold;
+      }
+      .delete {
+        position: absolute;
+        bottom: -1rem;
+        right: 1rem;
+        cursor: pointer;
+        background: #ff1c59;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          opacity: 0.9;
+        }
+        @include responsive(mobile) {
+          padding: 0.3rem !important;
+        }
+      }
+      .edit {
+        @extend .delete;
+        right: 4rem;
+        background: #1eee6a;
+      }
+    }
+  }
+}

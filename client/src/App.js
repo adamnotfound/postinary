@@ -1,11 +1,9 @@
-import './App.css';
-import Nav from './Nav';
-import Hero from './Hero';
-import Posts from './Posts';
-import Details from './Details';
-import Create from './Create';
-import Edit from './Edit';
-import NotFound from './NotFound';
+import Nav from './components/Nav';
+import Home from './views/Home';
+import Details from './views/Details';
+import Create from './views/Create';
+import Edit from './views/Edit';
+import NotFound from './components/NotFound';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import { ApolloConsumer } from '@apollo/client';
 
@@ -17,16 +15,7 @@ function App() {
           <div className="App">
             <Nav />
             <Routes>
-              <Route
-                exact
-                path="/"
-                element={
-                  <>
-                    <Hero />
-                    <Posts />
-                  </>
-                }
-              />
+              <Route exact path="/" element={<Home />} />
               <Route path="/details/:id" element={<Details />} />
               <Route path="/create" element={<Create />} />
               <Route path="/edit/:id" element={<Edit />} />

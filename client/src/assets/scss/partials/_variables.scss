@@ -1,0 +1,19 @@
+// Layout
+$theme-color: #8800ff;
+$theme-color-secondary: #ececec;
+$hero-height: 16.5rem;
+$theme-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$logo-font-size: 1.3rem;
+
+// Posts Section
+$posts-section-bgcolor: #fff;
+$posts-section-header: 1.3rem;
+
+// Details Page
+$details-section-bgcolor: #fff;
+$details-section-modalwidth: 600px;
+$details-section-headerheight: $hero-height;
+
+// Post Modal (Create,Edit)
+$post-modal-bgcolor: #fff;

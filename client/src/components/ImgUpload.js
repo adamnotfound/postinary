@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-function ImgUpload({ uploadedImg, setUploadedImg }) {
+function ImgUpload({ form, handleFormChange }) {
   const [loadingImg, setLoadingImg] = useState(false);
   const [error, setError] = useState('');
   const backgroundInput = useRef(null);
@@ -29,7 +29,7 @@ function ImgUpload({ uploadedImg, setUploadedImg }) {
           .then((r) => r.json())
           .catch((err) => console.log(err));
         setLoadingImg(false);
-        setUploadedImg(data.secure_url);
+        handleFormChange(data.secure_url, 'uploadedImg');
       } else {
         setLoadingImg(false);
         throw setError('Wrong type, JPEG or PNG only.');
@@ -43,24 +43,18 @@ function ImgUpload({ uploadedImg, setUploadedImg }) {
   };
   return (
     <div>
-      <div
-        style={{
-          border: uploadedImg ? '1px solid #d9d9d9' : '1px dashed  #d9d9d9',
-          background: uploadedImg ? 'white' : 'rgba(0,0,0,.02)',
-        }}
-        className="image-container"
-      >
-        {uploadedImg ? (
+      <div className="image-container">
+        {form.uploadedImg ? (
           <div className="overlay">
             <div
               className="uploaded-img"
-              style={{ backgroundImage: `url(${uploadedImg})` }}
+              style={{ backgroundImage: `url(${form.uploadedImg})` }}
             ></div>
             <div className="delete-img-container">
               <span
                 className="material-icons delete"
                 style={{ position: 'static' }}
-                onClick={(e) => setUploadedImg('')}
+                onClick={(e) => handleFormChange('', 'uploadedImg')}
               >
                 delete
               </span>

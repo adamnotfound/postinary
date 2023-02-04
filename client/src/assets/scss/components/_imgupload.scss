@@ -1,0 +1,71 @@
+@use '../partials/' as *;
+
+.image-container {
+  @include flex-center(column, center);
+  height: 100px;
+  width: 150px;
+  border-radius: 8px;
+  .image-btn,
+  .overlay {
+    background-color: darken($post-modal-bgcolor, 2%);
+    border-radius: 5% 5%;
+    border: 1px dashed darken($post-modal-bgcolor, 30%);
+    height: 100%;
+    width: 100%;
+  }
+  .image-btn {
+    @include flex-center(column, center);
+    cursor: pointer;
+    .icon-container {
+      @include flex-center(column, center);
+      gap: 5px;
+      .plus-icon {
+        font-size: 25px;
+      }
+      .upload-text {
+        font-size: 14px;
+      }
+    }
+  }
+  .loading-upload-container {
+    @include flex-center(column, center);
+    gap: 5px;
+    span {
+      font-size: 12px;
+    }
+  }
+  .overlay {
+    position: relative;
+    padding: 8px;
+    .uploaded-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-position: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .delete-img-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include flex-center(column, center);
+      width: 100%;
+      height: 100%;
+      gap: 8px;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.473);
+      color: white;
+      span {
+        background: red;
+        cursor: pointer;
+        border-radius: 50% 50%;
+      }
+    }
+    &:hover {
+      .delete-img-container {
+        display: flex;
+      }
+    }
+  }
+}

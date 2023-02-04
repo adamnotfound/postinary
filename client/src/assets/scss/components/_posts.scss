@@ -1,0 +1,29 @@
+@use '../partials/' as *;
+
+.post-section {
+  padding: 1rem 3rem;
+  background-color: $posts-section-bgcolor;
+  // Header
+  h1 {
+    font-size: $posts-section-header;
+    padding-bottom: 1rem;
+    margin-top: 15px;
+  }
+  // Posts Container
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 0.5rem;
+  }
+  // No Posts Container
+  .no-posts {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: gray;
+  }
+  // Adding Media Queries
+  @include responsive(tablet) {
+    padding: 1rem 1rem;
+  }
+}

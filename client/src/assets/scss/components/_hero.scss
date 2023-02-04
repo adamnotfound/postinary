@@ -1,0 +1,29 @@
+@use '../partials/' as *;
+
+.hero {
+  @include flex-center(column, center);
+  @include set-background($theme-color);
+  line-height: 2;
+  padding: 3rem;
+  height: $hero-height;
+  // Hero Button
+  a {
+    background-color: darken($theme-color, 13%);
+    text-decoration: none;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  @include responsive(mobile) {
+    padding: 1.5rem 1rem;
+  }
+  @include responsive(desktop) {
+    // Hero Title
+    p {
+      width: 45%;
+    }
+  }
+}

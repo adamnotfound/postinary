@@ -1,0 +1,43 @@
+@use '../partials/' as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  body {
+    background-color: $theme-color-secondary;
+    font-family: $theme-font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    nav {
+      @include flex-center(row, space-between);
+      @include set-background($theme-color);
+      padding: 1rem 3rem;
+      width: 100%;
+      h1 {
+        font-size: $logo-font-size;
+      }
+      .nav-links {
+        padding-bottom: 0.3rem;
+        a {
+          margin-right: 3rem;
+          &:hover {
+            border-bottom: 1px solid;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      @include responsive(tablet) {
+        padding: 1rem 1rem;
+      }
+    }
+    @include responsive(mobile) {
+      font-size: 80%;
+    }
+  }
+}
