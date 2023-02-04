@@ -1,10 +1,15 @@
 @use '../partials/' as *;
 
-.details-section {
+// Setting Header Details for all components that use it
+.layout-header {
   padding-bottom: 1rem;
-  .post-details {
-    @include set-background($theme-color);
-    min-height: $details-section-headerheight;
+  @include set-background($theme-color);
+  min-height: $details-section-headerheight;
+}
+
+// Styling Details of Single Post page
+.details-section {
+  .layout-header {
     padding: 3rem 3rem;
     // Post Title
     h1 {

@@ -33,7 +33,7 @@ const Details = () => {
   };
   return (
     <section className="details-section">
-      <div className="post-details">
+      <div className="layout-header">
         {post && !delLoad && <h1 className="mb-2">{post.title}</h1>}
         {(loading || delLoad) && <LoadingTwo />}
         {error && <p>{error}</p>}

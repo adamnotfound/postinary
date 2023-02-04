@@ -43,7 +43,7 @@ const Edit = () => {
   }
   return (
     <section className="details-section">
-      <div className="post-details">
+      <div className="layout-header">
         {loading && <LoadingTwo />}
         {error && <p>{error.message}</p>}
       </div>

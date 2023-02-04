@@ -1,3 +1,5 @@
+@use './mixins' as m;
+
 $spaceamounts: (1, 2, 3, 4, 5);
 
 @each $space in $spaceamounts {
@@ -25,4 +27,7 @@ $spaceamounts: (1, 2, 3, 4, 5);
   .py-#{$space} {
     padding: #{$space}rem 0;
   }
+}
+.flex-center {
+  @include m.flex-center(row, center);
 }

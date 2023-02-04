@@ -32,7 +32,7 @@ const Create = () => {
 
   return (
     <section className="details-section">
-      <div className="post-details"></div>
+      <div className="layout-header" />
       <div className="container">
         <PostForm
           form={form}
