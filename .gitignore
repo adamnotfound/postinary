@@ -3,6 +3,8 @@
 /node_modules
 /client/node_modules
 /client/build
+.env
+/client/.env
 # Logs
 logs
 *.log
