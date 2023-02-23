@@ -22,6 +22,7 @@ const form = ({ handleSubmit, setForm, form, loading, error, title }) => {
         <label>Post content:</label>
         <textarea
           name="content"
+          required
           defaultValue={form.content}
           onChange={handleFormChange}
         ></textarea>

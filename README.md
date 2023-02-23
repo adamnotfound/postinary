@@ -27,7 +27,6 @@ $ npm install --prefix client
 
 2. Make sure environment variables are set correctly in /.env and /client/.env
 
-_Correct environment variables are already included in this project for DevBros, you may change them if you would like to use your own database/graphql endpoint_
 
 ### Developer Mode
 

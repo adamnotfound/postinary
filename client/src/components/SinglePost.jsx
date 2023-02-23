@@ -16,8 +16,8 @@ const SinglePost = (props) => {
         />
         <h1>{post.title}</h1>
         <p className="preview">
-          {post.content.substr(0, 100)}
-          {post.content.length > 100 ? '...See More' : ''}
+          {post.content?.substr(0, 100)}
+          {post.content?.length > 100 ? '...See More' : ''}
         </p>
         <p className="time">{moment(post?.createdAt).format('llll')}</p>
       </div>
